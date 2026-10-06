@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="CarRental - Location de voitures simple, rapide et fiable.">
+<meta name="keywords" content="location voiture, car rental, Maroc, voitures, réservation">
+<meta name="author" content="CarRental">
+<title>CarRental | Location de voitures</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="nav-container">
+<a href="#home" class="logo">🚗 CarRental</a>
+
+<nav id="navLinks" class="nav-links">
+<a href="#home">Accueil</a>
+<a href="#cars">Nos voitures</a>
+<a href="reservation.html">Mes réservations</a>
+<a href="#about">À propos</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="nav-actions">
+<a href="#booking" class="nav-booking-btn">Réserver</a>
+</div>
+
+<button id="menuButton" class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
+</div>
+</header>
+
+<section id="home" class="hero">
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<span class="hero-small-title">CARRENTAL MAROC</span>
+<h1>Louez votre voiture<br>en toute simplicité</h1>
+<p>Découvrez notre sélection de véhicules et réservez votre voiture rapidement, facilement et en toute sécurité.</p>
+<div class="hero-buttons">
+<a href="#cars" class="primary-btn">Voir nos voitures</a>
+<a href="#booking" class="secondary-btn">Faire une réservation</a>
+</div>
+</div>
+</section>
+
+<section id="booking" class="booking-section">
+<div class="booking-container">
+
+<div class="booking-title">
+<span>RÉSERVATION</span>
+<h2>Trouvez votre voiture</h2>
+<p>Sélectionnez vos préférences pour trouver le véhicule qui vous convient.</p>
+</div>
+
+<div class="booking-form">
+
+<div class="booking-field">
+<label for="categoryFilter">Catégorie</label>
+<select id="categoryFilter">
+<option value="all">Toutes les catégories</option>
+<option value="economique">Économique</option>
+<option value="berline">Berline</option>
+<option value="suv">SUV</option>
+<option value="luxe">Luxe</option>
+</select>
+</div>
+
+<div class="booking-field">
+<label for="priceFilter">Budget maximum</label>
+<select id="priceFilter">
+<option value="all">Tous les prix</option>
+<option value="200">Jusqu'à 200 DH / jour</option>
+<option value="400">Jusqu'à 400 DH / jour</option>
+<option value="600">Jusqu'à 600 DH / jour</option>
+<option value="1000">Jusqu'à 1000 DH / jour</option>
+</select>
+</div>
+
+<button id="searchButton" class="search-btn" type="button">🔍 Rechercher</button>
+
+</div>
+</div>
+</section>
+
+<section id="cars" class="cars-section">
+<div class="section-container">
+
+<div class="section-heading">
+<span>NOTRE FLOTTE</span>
+<h2>Nos voitures</h2>
+<p>Choisissez le véhicule qui correspond à vos besoins.</p>
+</div>
+
+<div id="categoryButtons" class="category-buttons">
+<button class="category-btn active" data-category="all" type="button">Toutes</button>
+<button class="category-btn" data-category="economique" type="button">Économique</button>
+<button class="category-btn" data-category="berline" type="button">Berline</button>
+<button class="category-btn" data-category="suv" type="button">SUV</button>
+<button class="category-btn" data-category="luxe" type="button">Luxe</button>
+</div>
+
+<div id="carsContainer" class="cars-grid"></div>
+
+<div id="noCars" class="no-cars" style="display:none;">
+<div class="no-cars-icon">🚗</div>
+<h3>Aucune voiture trouvée</h3>
+<p>Essayez une autre catégorie ou un autre budget.</p>
+</div>
+
+</div>
+</section>
+
+<section class="why-section">
+<div class="section-container">
+
+<div class="section-heading">
+<span>POURQUOI CARRENTAL ?</span>
+<h2>Une location simple et fiable</h2>
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<div class="why-icon">🚗</div>
+<h3>Large choix</h3>
+<p>Une sélection de véhicules adaptés à différents besoins et budgets.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">⚡</div>
+<h3>Réservation rapide</h3>
+<p>Réservez votre voiture facilement en quelques étapes.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">🔒</div>
+<h3>Service fiable</h3>
+<p>Nous mettons l'accent sur la simplicité et la transparence.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">📞</div>
+<h3>Assistance</h3>
+<p>Une équipe disponible pour répondre à vos questions.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="stats-section">
+<div class="section-container">
+<div class="stats-grid">
+
+<div class="stat-item">
+<strong>20+</strong>
+<span>Véhicules</span>
+</div>
+
+<div class="stat-item">
+<strong>500+</strong>
+<span>Clients</span>
+</div>
+
+<div class="stat-item">
+<strong>5+</strong>
+<span>Années d'expérience</span>
+</div>
+
+<div class="stat-item">
+<strong>24/7</strong>
+<span>Assistance</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="about" class="about-section">
+<div class="section-container">
+
+<div class="about-grid">
+
+<div class="about-content">
+<span>À PROPOS DE NOUS</span>
+<h2>Votre mobilité, notre priorité</h2>
+
+<p>CarRental vous propose un service de location de voitures simple, pratique et adapté à vos besoins.</p>
+
+<p>Que vous soyez en déplacement professionnel, en vacances ou que vous ayez simplement besoin d'une voiture pour quelques jours, nous vous proposons différentes catégories de véhicules.</p>
+
+<a href="#cars" class="primary-btn">Découvrir nos voitures</a>
+</div>
+
+<div class="about-image">
+<div class="about-image-box">
+🚗
+<span>CarRental</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+<div class="section-container">
+
+<div class="section-heading">
+<span>CONTACT</span>
+<h2>Contactez-nous</h2>
+<p>Nous sommes à votre disposition pour répondre à vos questions.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<div class="contact-icon">📞</div>
+<h3>Téléphone</h3>
+<p>+212 6 XX XX XX XX</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-icon">✉️</div>
+<h3>Email</h3>
+<p>contact@carrental.ma</p>
+</div>
+
+<div class="contact-card">
+<div class="contact-icon">📍</div>
+<h3>Adresse</h3>
+<p>Maroc</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-container">
+
+<div class="footer-column">
+<a href="#home" class="footer-logo">🚗 CarRental</a>
+<p>Votre solution simple et fiable pour la location de voitures.</p>
+</div>
+
+<div class="footer-column">
+<h3>Navigation</h3>
+<a href="#home">Accueil</a>
+<a href="#cars">Nos voitures</a>
+<a href="reservation.html">Mes réservations</a>
+<a href="#about">À propos</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="footer-column">
+<h3>Services</h3>
+<a href="#cars">Location de voitures</a>
+<a href="#booking">Réservation</a>
+<a href="reservation.html">Mes réservations</a>
+<a href="#contact">Assistance</a>
+</div>
+
+<div class="footer-column">
+<h3>Contact</h3>
+<p>📞 +212 6 XX XX XX XX</p>
+<p>✉️ contact@carrental.ma</p>
+<p>📍 Maroc</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 CarRental. Tous droits réservés.</p>
+</div>
+</footer>
+
+<div id="toast" class="toast">
+<span id="toastIcon">✓</span>
+<span id="toastMessage">Message</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

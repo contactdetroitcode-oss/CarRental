@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="CarRental - Réservez votre voiture facilement et consultez vos réservations.">
+<title>CarRental | Réservation</title>
+<link rel="stylesheet" href="reservation.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="navbar-container">
+
+        <a href="index.html" class="logo">
+            🚗 <span>CarRental</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Accueil</a>
+            <a href="index.html#cars">Nos voitures</a>
+            <a href="reservation.html" class="active">Réservation</a>
+            <a href="index.html#about">À propos</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <button type="button" class="nav-button" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+</header>
+
+
+<main>
+
+<section class="page-header">
+
+    <div class="page-header-content">
+
+        <span class="section-label">
+            CARRENTAL
+        </span>
+
+        <h1>
+            Réservez votre voiture
+        </h1>
+
+        <p>
+            Choisissez vos dates, renseignez vos informations
+            et confirmez votre réservation en quelques secondes.
+        </p>
+
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a>
+            <span>›</span>
+            <span>Réservation</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="booking-section" id="bookingSection">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                RÉSERVATION
+            </span>
+
+            <h2 class="section-title">
+                Finalisez votre réservation
+            </h2>
+
+            <p>
+                Remplissez les informations ci-dessous pour réserver
+                votre véhicule.
+            </p>
+
+        </div>
+
+
+        <div class="booking-layout">
+
+
+            <!-- CAR PREVIEW -->
+
+            <div class="car-preview" id="carPreview">
+
+                <div class="car-preview-loading">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Chargement du véhicule...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOKING FORM -->
+
+            <div class="booking-card">
+
+                <div class="booking-card-header">
+
+                    <span>
+                        🚗
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Informations de réservation
+                        </h3>
+
+                        <p>
+                            Tous les champs sont obligatoires.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="reservationForm" novalidate>
+
+
+                    <div class="form-section">
+
+                        <h4>
+                            👤 Vos informations
+                        </h4>
+
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Nom complet
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Ex : Oussama Diami"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Adresse email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="exemple@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    WhatsApp
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="0612345678"
+                                    autocomplete="tel"
+                                    inputmode="tel"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-section">
+
+                        <h4>
+                            📅 Dates de location
+                        </h4>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="startDate">
+                                    Date de départ
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="startDate"
+                                    name="startDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="endDate">
+                                    Date de retour
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="endDate"
+                                    name="endDate"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ERROR -->
+
+                    <div
+                        class="form-error"
+                        id="formError"
+                        role="alert"
+                    ></div>
+
+
+                    <!-- PRICE -->
+
+                    <div class="price-summary">
+
+                        <div class="price-row">
+
+                            <span>
+                                Prix par jour
+                            </span>
+
+                            <strong id="dailyPrice">
+                                0 DH
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-row">
+
+                            <span>
+                                Durée
+                            </span>
+
+                            <strong id="duration">
+                                0 jour
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-divider"></div>
+
+
+                        <div class="price-row total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="totalPrice">
+                                0 DH
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="confirm-button"
+                        id="confirmButton"
+                    >
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Confirmer la réservation
+
+                    </button>
+
+
+                    <a
+                        href="index.html#cars"
+                        class="cancel-button"
+                    >
+                        ← Retour aux voitures
+                    </a>
+
+
+                    <p class="booking-note">
+                        🔒 Vos informations restent confidentielles.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MES RESERVATIONS -->
+
+<section class="reservations-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                MES RÉSERVATIONS
+            </span>
+
+            <h2 class="section-title">
+                Vos réservations
+            </h2>
+
+            <p>
+                Retrouvez ici toutes vos réservations enregistrées.
+            </p>
+
+        </div>
+
+
+        <div
+            class="empty-reservations"
+            id="emptyReservations"
+        >
+
+            <div class="empty-icon">
+                🚗
+            </div>
+
+            <h3>
+                Aucune réservation
+            </h3>
+
+            <p>
+                Vous n'avez pas encore effectué de réservation.
+            </p>
+
+            <a
+                href="index.html#cars"
+                class="empty-button"
+            >
+                Voir les voitures
+            </a>
+
+        </div>
+
+
+        <div
+            class="reservations-list"
+            id="reservationsList"
+        ></div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- SUCCESS MODAL -->
+
+<div
+    class="success-modal"
+    id="successModal"
+>
+
+    <div class="success-modal-card">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeSuccessModal"
+        >
+            ×
+        </button>
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <span class="success-label">
+            RÉSERVATION CONFIRMÉE
+        </span>
+
+        <h2>
+            Merci pour votre réservation !
+        </h2>
+
+        <p>
+            Votre réservation a été enregistrée avec succès.
+        </p>
+
+        <div class="reservation-number-box">
+
+            <span>
+                Numéro de réservation
+            </span>
+
+            <strong id="successReservationNumber">
+                CR-000000
+            </strong>
+
+        </div>
+
+        <button
+            type="button"
+            class="view-reservations-button"
+            id="viewReservationsButton"
+        >
+            Voir mes réservations
+        </button>
+
+        <a
+            href="index.html"
+            class="modal-home-button"
+        >
+            Retour à l'accueil
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <span id="toastIcon">
+        ✓
+    </span>
+
+    <p id="toastMessage"></p>
+
+</div>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+                🚗 <span>CarRental</span>
+            </a>
+
+            <p>
+                Votre partenaire pour une location
+                de voiture simple, rapide et fiable.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Navigation
+            </h4>
+
+            <a href="index.html">
+                Accueil
+            </a>
+
+            <a href="index.html#cars">
+                Nos voitures
+            </a>
+
+            <a href="reservation.html">
+                Réservation
+            </a>
+
+            <a href="index.html#about">
+                À propos
+            </a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Services
+            </h4>
+
+            <a href="index.html#cars">
+                Location courte durée
+            </a>
+
+            <a href="index.html#cars">
+                Location longue durée
+            </a>
+
+            <a href="index.html#cars">
+                Voitures premium
+            </a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Contact
+            </h4>
+
+            <span>
+                📞 +212 6 XX XX XX XX
+            </span>
+
+            <span>
+                ✉️ contact@carrental.ma
+            </span>
+
+            <span>
+                📍 Maroc
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 CarRental. Tous droits réservés.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="reservation.js"></script>
+
+</body>
+</html>
